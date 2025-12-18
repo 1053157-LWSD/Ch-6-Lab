@@ -15,7 +15,7 @@ until a valid file name is provided. */
 Type the file name you want to read: notHere.txt
 The file you are looking for isn't found.
 Type the file name you want to read: isHere.txt
-Here is the file's contents:
+File Contents of Book:
 Testing 1, 2, 3
 Write your text: Done!
 
