@@ -1,0 +1,51 @@
+import java.util.*;
+import java.io.*;
+// Take out imports later
+
+
+/* Write a method, readBook, which prompts the user to enter a file name 
+and then checks if the given file exists in the repository. 
+If the file exists, the method should read the file by opening it and displaying the text. (read the file)
+Then the user can type new information into the file which overwrites the existing content. (write in the file)
+If the file does not exist, handle the error by informing the user and ask them to enter another file name 
+until a valid file name is provided. */
+
+/* Exmaple Ouput Scenario:
+
+Type the file name you want to read: notHere.txt
+The file you are looking for isn't found.
+Type the file name you want to read: isHere.txt
+Here is the file's contents:
+Testing 1, 2, 3
+Write your text: Done!
+
+*/
+
+class Library {
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Welcome to the Library!");
+        System.out.print("Type in the file name of the book you want to read: ");
+        File name = new File(scan.next());
+        readBook(name, scan);
+        scan.close();
+    }
+
+public static void readBook(File bookName, Scanner scan) throws FileNotFoundException {
+
+    while (!bookName.exists()) {
+        System.out.println("That book can not be found. Try again.");
+        System.out.print("Type in the file name of the book you want to read: ");
+        bookName = new File(scan.next());
+    }
+
+    Scanner fileScan = new Scanner(bookName);
+    System.out.println("File Contents of Book:");
+    while (fileScan.hasNextLine()) {
+        System.out.println(fileScan.nextLine());
+    }
+    fileScan.close();
+
+
+}
+}
