@@ -14,9 +14,10 @@ Precondition: Assume user always adds file type at end of file name.
 
     Example Ouput Scenario:
 
-Type the file name you want to read: notHere.txt
+Welcome to the Library!
+Type the file name of the book you want to read: notHere.txt
 The file you are looking for isn't found.
-Type the file name you want to read: isHere.txt
+Type the file name of the book you want to read: isHere.txt
 File Contents of Book:
 Testing 1, 2, 3
 Write your text: Done!
